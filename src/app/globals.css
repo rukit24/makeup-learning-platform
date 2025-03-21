@@ -1,0 +1,28 @@
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Định nghĩa bảng màu */
+@layer base {
+  :root {
+    --color-background: #121212; /* Nền chính */
+    --color-surface: #1E1E1E;    /* Nền cho các khối, card */
+    --color-primary: #ffffff;    /* Màu chữ chính */
+    --color-secondary: #e0e0e0;  /* Màu chữ phụ */
+    --color-accent: #ffd700;     /* Màu điểm nhấn (vàng gold) */
+  }
+}
+
+/* Lớp tiện ích tùy chỉnh */
+.bg-custom {
+  background-color: var(--color-background);
+}
+
+.text-custom {
+  color: var(--color-primary);
+}
+
+.btn-accent {
+  @apply bg-[var(--color-accent)] text-black py-2 px-4 rounded;
+}

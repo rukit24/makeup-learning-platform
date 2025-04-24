@@ -12,17 +12,28 @@
     --color-secondary: #e0e0e0;  /* Màu chữ phụ */
     --color-accent: #ffd700;     /* Màu điểm nhấn (vàng gold) */
   }
+    /* Font mặc định cho body */
+    body {
+      font-family: 'Be Vietnam Pro', sans-serif;
+    }
 }
 
-/* Lớp tiện ích tùy chỉnh */
-.bg-custom {
-  background-color: var(--color-background);
-}
+/* ---------- Utilities ---------- */
+@layer utilities {
+  /* Màu nền/chữ */
+  .bg-custom   { background-color: var(--color-background); }
+  .text-custom { color: var(--color-primary); }
 
-.text-custom {
-  color: var(--color-primary);
-}
+  /* Nút accent */
+  .btn-accent  { @apply bg-[var(--color-accent)] text-black py-2 px-4 rounded; }
 
-.btn-accent {
-  @apply bg-[var(--color-accent)] text-black py-2 px-4 rounded;
+  /* Font tiện ích
+     - --font-heading  được gán ở layout.js cho Montserrat / Inter
+     - --font-caption  được gán ở layout.js cho Playfair Display */
+  .font-heading   { font-family: var(--font-heading); }
+  .font-caption   { font-family: var(--font-caption); }
+  .font-caption-ita { font-family: var(--font-caption); font-style: italic; }
+
+  /* Màu vàng Champagne */
+  .text-champagne { color: #dcc99a; }
 }

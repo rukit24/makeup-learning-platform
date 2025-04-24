@@ -2,22 +2,27 @@ import Image from "next/image";
 
 export default function Header() {
   return (
-    <header className="bg-[var(--color-surface)] py-4 shadow-md">
+    <header className="bg-[var(--color-surface)] py-2 font-heading shadow-md sticky top-0 z-50">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-3 items-center">
-          {/* Cột 1: Logo */}
+          {/* Logo nhỏ hơn */}
           <div>
-            {/* Sử dụng Next.js Image để tối ưu hình ảnh */}
             <Image
               src="/logo.png"
               alt="MyBrand Logo"
-              width={240} // Chiều rộng mong muốn
-              height={80} // Chiều cao mong muốn
+              width={200} /* ↓ giảm */
+              height={60}
+              priority
             />
           </div>
 
-          {/* Cột 2: Menu ở giữa */}
-          <ul className="text-2xl font-bold flex justify-center gap-14 flex-nowrap whitespace-nowrap">
+          {/* Menu trung tâm */}
+          <ul className="text-xl font-bold flex justify-center gap-10 whitespace-nowrap">
+            <li>
+              <a href="/trang-chu" className="hover:text-[var(--color-accent)]">
+                Trang chủ
+              </a>
+            </li>
             <li>
               <a href="/san-pham" className="hover:text-[var(--color-accent)]">
                 Sản phẩm dịch vụ
@@ -40,7 +45,7 @@ export default function Header() {
             </li>
           </ul>
 
-          {/* Cột 3: Nút Đăng nhập bên phải */}
+          {/* Nút đăng nhập */}
           <div className="text-xl font-bold flex justify-end">
             <a
               href="/dang-nhap"

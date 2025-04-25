@@ -159,8 +159,7 @@ const spanClass = (txt) => {
 };
 
 export default function Testimonials() {
-  const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
-  const size = typeof window !== "undefined" && window.innerWidth < 768 ? 3 : 6;
+  const size = 3;
   const slides = [...Array(Math.ceil(reviews.length / size))].map((_, i) =>
     reviews.slice(i * size, (i + 1) * size)
   );
@@ -180,7 +179,7 @@ export default function Testimonials() {
         >
           {slides.map((chunk, idx) => (
             <SwiperSlide key={idx}>
-              <div className="grid grid-auto-rows-[10px] grid-auto-flow-dense grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 max-w-6xl mx-auto">
+              <div className="grid grid-auto-rows-[10px] grid-auto-flow-dense grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
                 {chunk.map((r, i) => (
                   <motion.div
                     key={i}
@@ -216,15 +215,17 @@ export default function Testimonials() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="mt-12 md:mt-16 flex flex-col sm:flex-row flex-wrap justify-center gap-6 max-w-5xl mx-auto"
+        className="mt-12 md:mt-16 grid grid-cols-4 gap-4 sm:gap-6 max-w-6xl mx-auto"
       >
         {kpis.map(({ icon: Icon, value, label }, i) => (
-          <div key={i} className="text-center flex-1 min-w-[120px]">
-            <Icon className="w-10 h-10 mx-auto text-[var(--color-accent)] mb-2" />
-            <p className="text-2xl sm:text-3xl font-bold text-champagne">
+          <div key={i} className="flex flex-col items-center">
+            <Icon className="w-7 h-7 sm:w-10 sm:h-10 md:w-12 md:h-12 text-[var(--color-accent)] mb-2" />
+            <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-champagne">
               {value}
             </p>
-            <p className="text-sm sm:text-base text-gray-200 mt-1">{label}</p>
+            <p className="text-xs sm:text-sm md:text-base text-gray-200 text-center mt-1">
+              {label}
+            </p>
           </div>
         ))}
       </motion.div>

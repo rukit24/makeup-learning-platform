@@ -159,17 +159,19 @@ const spanClass = (txt) => {
 };
 
 export default function Testimonials() {
-  const size = 6;
+  const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
+  const size = typeof window !== "undefined" && window.innerWidth < 768 ? 3 : 6;
   const slides = [...Array(Math.ceil(reviews.length / size))].map((_, i) =>
     reviews.slice(i * size, (i + 1) * size)
   );
 
   return (
-    <section className="min-h-screen flex flex-col py-8 sm:py-12 md:py-20 px-2 sm:px-4 md:px-8 bg-gradient-to-tr from-[#392067] via-[#8f2bd9] via-50% via-[#ff8000] to-[#d00072] text-white">
-      <h2 className="text-center font-heading text-3xl sm:text-4xl md:text-5xl font-bold mb-12">
+    <section className="min-h-screen flex flex-col py-12 md:py-20 px-4 bg-gradient-to-tr from-[#ff8000] via-[#ff3d9a] to-[#7000ff] text-white">
+      <h2 className="text-center font-heading text-3xl sm:text-4xl md:text-5xl font-bold mb-10">
         Feedback từ khách hàng & học viên
       </h2>
-      <div className="flex-grow overflow-hidden">
+
+      <div className="flex-grow">
         <Swiper
           modules={[Autoplay]}
           slidesPerView={1}
@@ -178,7 +180,7 @@ export default function Testimonials() {
         >
           {slides.map((chunk, idx) => (
             <SwiperSlide key={idx}>
-              <div className="grid grid-auto-rows-[10px] grid-auto-flow-dense grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 max-w-7xl mx-auto">
+              <div className="grid grid-auto-rows-[10px] grid-auto-flow-dense grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 max-w-6xl mx-auto">
                 {chunk.map((r, i) => (
                   <motion.div
                     key={i}
@@ -188,17 +190,17 @@ export default function Testimonials() {
                     transition={{ duration: 0.5, delay: i * 0.04 }}
                     className={`${spanClass(
                       r.text
-                    )} bg-black/70 backdrop-blur-md relative overflow-hidden rounded-xl p-4 sm:p-6 border border-white/10 shadow-lg hover:shadow-xl hover:scale-105 hover:rotate-[1deg] transition`}
+                    )} bg-black/70 backdrop-blur-md relative overflow-hidden rounded-xl p-6 border border-white/10 shadow-[0_4px_20px_rgba(255,255,255,0.05)] hover:shadow-[0_8px_32px_rgba(255,255,255,0.08)] hover:scale-105 hover:rotate-[1deg] transition`}
                   >
                     <span className="absolute inset-0 bg-[rgba(220,201,154,0.07)] rounded-xl pointer-events-none" />
                     <Stars rating={r.rating} />
-                    <p className="relative z-10 italic text-xs sm:text-sm md:text-base mb-3 leading-relaxed">
+                    <p className="relative z-10 italic text-sm md:text-base mb-4 leading-relaxed">
                       “{r.text}”
                     </p>
                     <p className="relative z-10 font-semibold text-sm">
                       {r.name}
                     </p>
-                    <p className="relative z-10 text-xs sm:text-xs text-gray-300">
+                    <p className="relative z-10 text-xs text-gray-300">
                       {r.role}
                     </p>
                   </motion.div>
@@ -208,22 +210,21 @@ export default function Testimonials() {
           ))}
         </Swiper>
       </div>
+
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="mt-8 md:mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 max-w-5xl mx-auto"
+        className="mt-12 md:mt-16 flex flex-col sm:flex-row flex-wrap justify-center gap-6 max-w-5xl mx-auto"
       >
         {kpis.map(({ icon: Icon, value, label }, i) => (
-          <div key={i} className="text-center">
-            <Icon className="w-12 h-12 sm:w-14 sm:h-14 mx-auto text-[var(--color-accent)] mb-2" />
-            <p className="text-3xl sm:text-4xl md:text-5xl font-bold text-champagne">
+          <div key={i} className="text-center flex-1 min-w-[120px]">
+            <Icon className="w-10 h-10 mx-auto text-[var(--color-accent)] mb-2" />
+            <p className="text-2xl sm:text-3xl font-bold text-champagne">
               {value}
             </p>
-            <p className="text-sm sm:text-base md:text-lg text-gray-200 mt-1">
-              {label}
-            </p>
+            <p className="text-sm sm:text-base text-gray-200 mt-1">{label}</p>
           </div>
         ))}
       </motion.div>

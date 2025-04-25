@@ -4,7 +4,6 @@ import { useRef, useEffect } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-// Variants for animation
 const containerVariants = {
   hidden: { opacity: 0 },
   show: {
@@ -23,21 +22,28 @@ const itemVariants = {
 };
 
 export default function Hero() {
-  const videoRef = useRef(null);
+  const desktopVideoRef = useRef(null);
+  const mobileVideoRef = useRef(null);
+
   useEffect(() => {
-    const v = videoRef.current;
-    if (v) {
-      v.muted = true;
-      v.play().catch(() => {});
+    const vDesktop = desktopVideoRef.current;
+    const vMobile = mobileVideoRef.current;
+    if (vDesktop) {
+      vDesktop.muted = true;
+      vDesktop.play().catch(() => {});
+    }
+    if (vMobile) {
+      vMobile.muted = true;
+      vMobile.play().catch(() => {});
     }
   }, []);
 
   return (
     <section className="relative w-full h-screen overflow-hidden">
-      {/* Video background */}
+      {/* Video desktop (ngang) */}
       <video
-        ref={videoRef}
-        className="absolute inset-0 w-full h-full object-cover object-center z-0 filter brightness-40"
+        ref={desktopVideoRef}
+        className="hidden sm:block absolute inset-0 w-full h-full object-cover object-center z-0 filter brightness-40"
         src="/ads-video/hero-2.mp4"
         autoPlay
         muted
@@ -51,17 +57,32 @@ export default function Hero() {
         Your browser does not support the video tag.
       </video>
 
-      {/* Dark overlay for better contrast */}
+      {/* Video mobile (dọc) */}
+      <video
+        ref={mobileVideoRef}
+        className="block sm:hidden absolute inset-0 w-full h-full object-cover object-center z-0 filter brightness-40"
+        src="/ads-video/hero-vertical.mp4"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        poster="/ads-video/hero-poster.jpg"
+      >
+        <source src="/ads-video/hero-vertical.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
+      {/* Overlay */}
       <div className="absolute inset-0 bg-black/40 z-10" />
 
-      {/* Content */}
+      {/* Nội dung */}
       <motion.div
         variants={containerVariants}
         initial="hidden"
         animate="show"
         className="relative z-20 flex flex-col items-center justify-center h-full text-center px-4 sm:px-6 md:px-8 lg:px-12 text-white"
       >
-        {/* Logo */}
         <motion.div variants={itemVariants} className="mb-4 sm:mb-6 md:mb-8">
           <Image
             src="/logo.png"
@@ -73,15 +94,13 @@ export default function Hero() {
           />
         </motion.div>
 
-        {/* Description */}
         <motion.p
           variants={itemVariants}
           className="text-base sm:text-lg md:text-xl lg:text-2xl text-[var(--color-secondary)] max-w-xs sm:max-w-md md:max-w-lg mb-6 sm:mb-8"
         >
-          Học makeup cá nhân &amp; chuyên nghiệp – hiện đại, cảm hứng, sáng tạo.
+          Học makeup cá nhân & chuyên nghiệp – hiện đại, cảm hứng, sáng tạo.
         </motion.p>
 
-        {/* CTA Buttons */}
         <motion.div
           variants={itemVariants}
           className="flex flex-col sm:flex-row gap-3 sm:gap-6"

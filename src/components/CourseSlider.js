@@ -6,7 +6,7 @@ import Image from "next/image";
 import "swiper/css";
 import "swiper/css/navigation";
 
-/* Danh sách khóa học (có thể cập nhật) */
+/* Danh sách khóa học */
 const courses = [
   {
     title: "MAKEUP CÁ NHÂN",
@@ -46,12 +46,12 @@ export default function CourseSlider() {
       <div className="relative max-w-7xl mx-auto px-2 sm:px-4 md:px-8">
         <Swiper
           modules={[Navigation, Autoplay]}
-          spaceBetween={16}
+          spaceBetween={12}
           slidesPerView={1}
           loop
           autoplay={{ delay: 3500, disableOnInteraction: false }}
           breakpoints={{
-            640: { slidesPerView: 2, spaceBetween: 20 },
+            640: { slidesPerView: 2, spaceBetween: 16 },
             1024: { slidesPerView: 3, spaceBetween: 24 },
           }}
           navigation={{ nextEl: ".btn-next", prevEl: ".btn-prev" }}
@@ -61,21 +61,20 @@ export default function CourseSlider() {
             <SwiperSlide key={i}>
               {/* Card */}
               <div className="group relative overflow-hidden rounded-lg shadow-lg">
-                {/* Ảnh */}
                 <Image
                   src={c.image}
                   alt={c.title}
                   width={400}
                   height={550}
-                  className="w-full h-[300px] sm:h-[400px] md:h-[500px] object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="w-full h-[320px] sm:h-[400px] md:h-[500px] object-contain sm:object-cover transition-transform duration-500 group-hover:scale-105"
                 />
 
                 {/* Caption overlay */}
-                <div className="absolute bottom-0 inset-x-0 bg-black/70 backdrop-blur-md py-3 sm:py-4 px-2 sm:px-3 text-center">
+                <div className="absolute bottom-0 inset-x-0 bg-black/70 backdrop-blur-md py-2 sm:py-3 md:py-4 px-2 sm:px-3 text-center">
                   <h3 className="font-caption text-base sm:text-lg md:text-2xl font-semibold text-champagne drop-shadow-[0_1px_2px_rgba(0,0,0,0.7)]">
                     {c.title}
                   </h3>
-                  <p className="font-caption text-xs sm:text-sm md:text-base text-champagne mt-1 drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)]">
+                  <p className="font-caption text-xs sm:text-sm md:text-base text-champagne mt-0.5 sm:mt-1 drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)]">
                     {c.caption}
                   </p>
                 </div>
@@ -83,10 +82,10 @@ export default function CourseSlider() {
             </SwiperSlide>
           ))}
 
-          {/* Prev button */}
-          <button className="btn-prev absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-30 p-2 sm:p-3 rounded-full bg-black/40 hover:bg-[var(--color-accent)] transition">
+          {/* Prev */}
+          <button className="btn-prev absolute left-2 sm:left-3 top-1/2 -translate-y-1/2 z-30 p-2 sm:p-3 rounded-full bg-black/40 hover:bg-[var(--color-accent)] transition">
             <svg
-              className="w-5 h-5 sm:w-6 sm:h-6 text-white"
+              className="w-4 h-4 sm:w-5 sm:h-5 text-white"
               viewBox="0 0 24 24"
             >
               <path
@@ -98,10 +97,10 @@ export default function CourseSlider() {
             </svg>
           </button>
 
-          {/* Next button */}
-          <button className="btn-next absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-30 p-2 sm:p-3 rounded-full bg-black/40 hover:bg-[var(--color-accent)] transition">
+          {/* Next */}
+          <button className="btn-next absolute right-2 sm:right-3 top-1/2 -translate-y-1/2 z-30 p-2 sm:p-3 rounded-full bg-black/40 hover:bg-[var(--color-accent)] transition">
             <svg
-              className="w-5 h-5 sm:w-6 sm:h-6 text-white"
+              className="w-4 h-4 sm:w-5 sm:h-5 text-white"
               viewBox="0 0 24 24"
             >
               <path

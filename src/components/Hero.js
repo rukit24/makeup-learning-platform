@@ -60,7 +60,7 @@ export default function Hero() {
       {/* Video mobile (dọc) */}
       <video
         ref={mobileVideoRef}
-        className="block sm:hidden absolute inset-0 w-full h-full object-cover object-center z-0 filter brightness-40"
+        className="block sm:hidden absolute inset-0 w-full h-full object-cover object-center z-0 filter brightness-60"
         src="/ads-video/hero-vertical.mp4"
         autoPlay
         muted

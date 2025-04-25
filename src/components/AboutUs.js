@@ -25,7 +25,8 @@ export default function AboutUs() {
         transition={{ duration: 0.9, ease: "easeOut" }}
         viewport={{ once: true }}
         className="
-          absolute top-1/2 -translate-y-1/2
+          absolute
+          top-8 sm:top-1/2 sm:-translate-y-1/2
           left-1/2 -translate-x-1/2 sm:left-6 sm:translate-x-0 md:left-12 lg:left-16
           z-10
           w-[92%] sm:w-[80%] md:w-[55%] lg:w-[45%]

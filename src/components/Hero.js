@@ -2,19 +2,14 @@
 
 import { useRef, useEffect } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion"; // ← import Framer Motion
+import { motion } from "framer-motion";
 
-// 1) Các biến variant để cấu hình animation
+// Variants for animation
 const containerVariants = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
-    transition: {
-      // Thời gian delay trước khi children bắt đầu animate
-      delayChildren: 1.3,
-      // Thời gian giữa các lần animate của từng child
-      staggerChildren: 0.6,
-    },
+    transition: { delayChildren: 1.3, staggerChildren: 0.6 },
   },
 };
 
@@ -23,18 +18,12 @@ const itemVariants = {
   show: {
     y: 0,
     opacity: 1,
-    transition: {
-      // Thời gian animate cho mỗi item
-      duration: 0.6,
-      // Tốc độ (easing) của animation: “easeOut” mượt, không gắt
-      ease: "easeOut",
-    },
+    transition: { duration: 0.6, ease: "easeOut" },
   },
 };
 
 export default function Hero() {
   const videoRef = useRef(null);
-
   useEffect(() => {
     const v = videoRef.current;
     if (v) {
@@ -45,10 +34,10 @@ export default function Hero() {
 
   return (
     <section className="relative w-full h-screen overflow-hidden">
-      {/* Video nền */}
+      {/* Video background */}
       <video
         ref={videoRef}
-        className="absolute inset-0 w-full h-full object-cover object-center z-0 filter brightness-30 contrast-110 saturate-105"
+        className="absolute inset-0 w-full h-full object-cover object-center z-0 filter brightness-40"
         src="/ads-video/hero-2.mp4"
         autoPlay
         muted
@@ -62,50 +51,50 @@ export default function Hero() {
         Your browser does not support the video tag.
       </video>
 
-      {/* Overlay (bỏ tạm để tập trung animation) */}
-      {/* <div className="absolute inset-0 bg-black bg-opacity-20 z-10" /> */}
+      {/* Dark overlay for better contrast */}
+      <div className="absolute inset-0 bg-black/40 z-10" />
 
-      {/* Nội dung với Framer Motion */}
+      {/* Content */}
       <motion.div
-        // 2) Gán variants và trạng thái initial/animate
         variants={containerVariants}
         initial="hidden"
         animate="show"
-        className="relative z-20 flex flex-col items-center justify-center h-full text-center px-4 text-white"
+        className="relative z-20 flex flex-col items-center justify-center h-full text-center px-4 sm:px-6 md:px-8 lg:px-12 text-white"
       >
         {/* Logo */}
-        <motion.div variants={itemVariants} className="mb-6">
+        <motion.div variants={itemVariants} className="mb-4 sm:mb-6 md:mb-8">
           <Image
             src="/logo.png"
             alt="Phương Quỳnh Logo"
-            width={480}
-            height={200}
+            width={240}
+            height={100}
+            className="w-32 sm:w-40 md:w-48 lg:w-60 h-auto mx-auto"
             priority
           />
         </motion.div>
 
-        {/* Mô tả */}
+        {/* Description */}
         <motion.p
           variants={itemVariants}
-          className="text-lg md:text-xl text-[var(--color-secondary)] max-w-2xl mb-8"
+          className="text-base sm:text-lg md:text-xl lg:text-2xl text-[var(--color-secondary)] max-w-xs sm:max-w-md md:max-w-lg mb-6 sm:mb-8"
         >
           Học makeup cá nhân &amp; chuyên nghiệp – hiện đại, cảm hứng, sáng tạo.
         </motion.p>
 
-        {/* Nút CTA */}
+        {/* CTA Buttons */}
         <motion.div
           variants={itemVariants}
-          className="flex flex-wrap justify-center gap-4"
+          className="flex flex-col sm:flex-row gap-3 sm:gap-6"
         >
           <a
             href="/khoa-hoc-cua-toi"
-            className="px-6 py-3 border border-white text-white rounded hover:bg-white hover:text-black transition"
+            className="px-4 py-2 sm:px-6 sm:py-3 border border-white text-white rounded hover:bg-white hover:text-black transition text-sm sm:text-base"
           >
             KHÓA HỌC CỦA TÔI
           </a>
           <a
             href="/dang-ky"
-            className="px-6 py-3 bg-[var(--color-accent)] text-black font-bold rounded hover:brightness-110 transition"
+            className="px-4 py-2 sm:px-6 sm:py-3 bg-[var(--color-accent)] text-black font-bold rounded hover:brightness-110 transition text-sm sm:text-base"
           >
             ĐĂNG KÝ HỌC
           </a>

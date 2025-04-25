@@ -1,4 +1,3 @@
-// src/components/AboutUs.js
 "use client";
 
 import Image from "next/image";
@@ -6,8 +5,8 @@ import { motion } from "framer-motion";
 
 export default function AboutUs() {
   return (
-    <section className="relative w-full h-[650px] md:h-[720px] overflow-hidden">
-      {/* ------------- ẢNH NỀN B&W ------------- */}
+    <section className="relative w-full h-[450px] sm:h-[550px] md:h-[650px] lg:h-[720px] overflow-hidden">
+      {/* Ảnh nền B&W */}
       <Image
         src="/AboutUs.png"
         alt="Makeup Artist Việt Nam"
@@ -16,38 +15,39 @@ export default function AboutUs() {
         priority
       />
 
-      {/* Phủ tối toàn màn hình */}
+      {/* Lớp overlay tối */}
       <div className="absolute inset-0 bg-black/60 backdrop-blur-[2px]" />
 
-      {/* ------------- BOX THÔNG TIN ------------- */}
+      {/* Box thông tin */}
       <motion.div
         initial={{ x: -80, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.9, ease: "easeOut" }}
         viewport={{ once: true }}
         className="
-          absolute top-1/2 -translate-y-1/2   /* lơ lửng giữa chiều cao */
-          left-12                               /* cách mép trái 2rem → sửa left-* */
-          z-10 w-[90%] md:w-[40%] lg:w-[45%]   /* chiều rộng box */
+          absolute top-1/2 -translate-y-1/2
+          left-4 sm:left-6 md:left-12 lg:left-16
+          z-10
+          w-[90%] sm:w-[80%] md:w-[50%] lg:w-[45%]
           bg-black/70 backdrop-blur-md
-          px-8 py-10
+          px-4 sm:px-6 md:px-8 lg:px-10
+          py-6 sm:py-8 md:py-10
           shadow-xl shadow-black/50
-          border-4 rounded-md
-          [border-image:linear-gradient(135deg,#dcc99a,#dcc99a22)1]  /* gradient viền */
+          border-2 sm:border-4 rounded-md
+          [border-image:linear-gradient(135deg,#dcc99a,#dcc99a22)1]
         "
       >
-        {/* ----- Nội dung ----- */}
-        <h2 className="font-heading text-3xl md:text-5xl font-bold text-center mb-8 text-[var(--color-primary)]">
-          Về&nbsp;Chúng&nbsp;Tôi
+        <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-4 sm:mb-6 md:mb-8 text-[var(--color-primary)]">
+          Về Chúng Tôi
         </h2>
 
-        <p className="font-caption-ita text-champagne text-base md:text-lg leading-loose">
-          Phương Quỳnh Bridal&nbsp;Makeup&nbsp;Academy là nơi hội tụ đam mê và
-          kỹ thuật trang điểm hiện&nbsp;đại. Chúng tôi kiến&nbsp;tạo không gian
-          học tập đầy cảm&nbsp;hứng, thực hành trực tiếp cùng chuyên gia hàng
-          đầu Việt&nbsp;Nam. <br className="hidden md:block" />
-          Sứ mệnh của chúng tôi là giúp bạn tự tin tỏa sáng và tạo nên
-          dấu&nbsp;ấn riêng trong ngành&nbsp;làm&nbsp;đẹp.
+        <p className="font-caption-ita text-champagne text-sm sm:text-base md:text-lg leading-relaxed md:leading-loose">
+          Phương Quỳnh Bridal Makeup Academy là nơi hội tụ đam mê và kỹ thuật
+          trang điểm hiện đại. Chúng tôi kiến tạo không gian học tập đầy cảm
+          hứng, thực hành trực tiếp cùng chuyên gia hàng đầu Việt Nam.
+          <br className="hidden md:block" />
+          Sứ mệnh của chúng tôi là giúp bạn tự tin tỏa sáng và tạo nên dấu ấn
+          riêng trong ngành làm đẹp.
         </p>
       </motion.div>
     </section>

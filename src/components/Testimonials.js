@@ -14,117 +14,121 @@ import "swiper/css";
 
 /* --------- FAKE REVIEWS (18) --------- */
 const reviews = [
+  // Slide 1: short, medium, long, short, medium, long
   {
-    name: "Lan Phương",
-    role: "Cô dâu",
-    rating: 5,
-    text: "Makeup cực tự nhiên, lên hình xinh vô cùng! Cảm ơn ekip vì đã chăm chút từng chi tiết nhỏ trong ngày cưới của mình.",
-  },
-  {
-    name: "Mai Chi",
-    role: "Khách đi tiệc",
-    rating: 4,
-    text: "Trang điểm đúng gu, giữ được suốt buổi tiệc. Sẽ quay lại ủng hộ!",
-  },
-  {
-    name: "Ngọc Ánh",
+    name: "Nguyễn Thị An",
     role: "Học viên cấp tốc",
     rating: 5,
-    text: "2 tuần học mà mình đã tự tin tự makeup đi làm hằng ngày. Giáo viên cực kỳ tận tâm, chỉnh tay cho từng bạn.",
+    text: "Tôi học chỉ trong hai buổi workshop và đã tự tin thực hiện make-up cơ bản cho bản thân, hiệu quả ngay lập tức.",
   },
   {
-    name: "Hồng Nhung",
-    role: "Chị cô dâu",
-    rating: 5,
-    text: "Tone cam đào nhẹ nhàng, không hề bị dày. Mọi người khen suốt buổi!",
-  },
-  {
-    name: "Minh Thư",
-    role: "Mẹ cô dâu",
+    name: "Trần Văn Bảo",
+    role: "Khách đi tiệc",
     rating: 4,
-    text: "Che khuyết điểm rất tốt, nhưng hơi lâu mới xong. Dù vậy mình vẫn hài lòng.",
+    text: "Buổi makeup tiệc tối được giữ màu suốt 6 giờ đồng hồ dù mồ hôi cũng không làm nhòe phấn, tôi rất hài lòng với kỹ thuật blend tinh tế của team.",
   },
   {
-    name: "Trâm Anh",
-    role: "Makeup Artist học lại",
-    rating: 5,
-    text: "Khoá nâng cao đi thẳng vào thực hành, demo kỹ thuật trendy năm nay. Giá trị nhận được xứng đáng từng đồng học phí!",
-  },
-  {
-    name: "Bích Ngọc",
-    role: "Học viên Pro",
-    rating: 5,
-    text: "Giáo trình rõ ràng, được thực hành với model thật. Sau khoá mình nhận job ngay!",
-  },
-  {
-    name: "Diễm My",
-    role: "Học viên online",
-    rating: 4,
-    text: "Video bài giảng chi tiết, có bài tập quay lại nên dễ theo sát.",
-  },
-  {
-    name: "Thanh Lam",
-    role: "Khách tiệc cưới",
-    rating: 5,
-    text: "Đặt lịch gấp vẫn sắp xếp được, makeup xinh hết nấc.",
-  },
-  {
-    name: "Thảo Vy",
-    role: "Makeup đi sự kiện",
-    rating: 4,
-    text: "Concept khá mới, tuy nhiên son hơi trôi cuối buổi.",
-  },
-  {
-    name: "Hoàng Yến",
+    name: "Lê Minh Châu",
     role: "Stylist",
     rating: 5,
-    text: "Hợp tác ekip rất chuyên nghiệp, màu da lên sân khấu chuẩn ánh đèn.",
+    text: "Trong khóa nâng cao với 8 buổi thực hành sâu khách hàng, tôi được hướng dẫn chi tiết từng bước contour, highlight, phối màu mắt và môi, cùng bộ kit chuyên nghiệp, giúp tôi thành thạo kỹ thuật airbrush và nhận dự án freelance ngay sau khi hoàn thành.",
   },
   {
-    name: "Gia Hân",
-    role: "Cô dâu",
-    rating: 5,
-    text: "Tóc + makeup combo quá ưng ý, giá tốt hơn nơi khác.",
-  },
-  {
-    name: "Khánh Ngọc",
-    role: "Khách photoshoot",
-    rating: 5,
-    text: "Da mình khó nhưng vẫn xử lý mịn màng. Retouch hậu kỳ gần như không cần.",
-  },
-  {
-    name: "Tú Anh",
-    role: "Học viên trial",
-    rating: 4,
-    text: "Thầy cô hỗ trợ xuyên suốt, feedback bài tập mỗi ngày.",
-  },
-  {
-    name: "Lan Phương",
-    role: "Cô dâu",
-    rating: 5,
-    text: "Makeup cực tự nhiên, lên hình xinh vô cùng! Cảm ơn ekip vì đã chăm chút từng chi tiết nhỏ trong ngày cưới của mình, từ kiểu tóc tới phụ kiện đều được mix tinh tế.",
-  },
-  {
-    name: "Minh Khuê",
-    role: "Khách khai trương",
-    rating: 5,
-    text: "Lần đầu trang điểm chuyên nghiệp mà mình cảm thấy tự tin suốt 10 giờ sự kiện. Nhân viên chu đáo, còn hướng dẫn mình giữ lớp nền không trôi.",
-  },
-  {
-    name: "Khánh Ngọc",
-    role: "Khách photoshoot",
-    rating: 4,
-    text: "Da mình khó nhưng vẫn xử lý mịn màng. Retouch hậu kỳ gần như không cần. Concept khá mới, tuy nhiên son hơi trôi cuối buổi, mong academy khắc phục.",
-  },
-  {
-    name: "Đan Thư",
+    name: "Phạm Thị Dung",
     role: "Học viên cá nhân",
     rating: 4,
-    text: "Khoá cá nhân 6 buổi nhưng kiến thức siêu dày! Giảng viên kèm tay chỉ từng lỗi cọ và bố cục ánh sáng. Mình áp dụng makeup cho khách ngay tuần sau và nhận feedback tốt.",
+    text: "Lớp makeup cá nhân 6 buổi thị phạm trực tiếp, giải đáp chi tiết từng thắc mắc nhỏ ở bước đánh phấn.",
+  },
+  {
+    name: "Hoàng Anh Đức",
+    role: "Makeup Artist học lại",
+    rating: 5,
+    text: "Khóa học tuần vừa rồi thực hành make-up cô dâu phong cách nhẹ nhàng, màu pastel lên đi tiệc rất tự nhiên, lớp nền giữ chắc và độ che phủ tốt, cảm ơn giảng viên tận tâm.",
+  },
+  {
+    name: "Võ Thị Hồng",
+    role: "Cô dâu",
+    rating: 5,
+    text: "Ngày cưới của tôi trở nên trọn vẹn hơn bao giờ hết khi lớp makeup giữ nguyên nét tự nhiên, highlight và contour hài hòa, ekip còn chuẩn bị set touch-up gọn nhẹ giúp tôi luôn tươi tắn xuyên suốt buổi lễ và tiệc tối.",
+  },
+
+  // Slide 2: medium, long, short, medium, long, short
+  {
+    name: "Đặng Quỳnh Hoa",
+    role: "Khách khai trương",
+    rating: 5,
+    text: "Makeup sáng tạo cho sự kiện khai trương, phong cách tươi trẻ, giữ màu chuẩn dưới ánh đèn showroom.",
+  },
+  {
+    name: "Trần Thị Mai",
+    role: "Học viên Pro",
+    rating: 5,
+    text: "Khóa đào tạo chuyên sâu 10 buổi, bao gồm lý thuyết và thực hành, tôi được giảng viên hỗ trợ kỹ thuật blend với độ chính xác cao, sau khóa tôi có thể nhận đơn hàng trang điểm cho khách VIP.",
+  },
+  {
+    name: "Bùi Thanh Hùng",
+    role: "Khách photoshoot",
+    rating: 4,
+    text: "Bộ ảnh thời trang nhờ makeup mà hoàn hảo hơn, ánh sáng lên chuẩn, team chuyên nghiệp.",
+  },
+  {
+    name: "Đỗ Thị Kim",
+    role: "Mẹ cô dâu",
+    rating: 5,
+    text: "Khóa học online với video hướng dẫn cận cảnh, bài tập thực hành thường xuyên, feedback nhanh chóng, giúp tôi nắm chắc kỹ thuật và tự tin makeup cho chính mình và bạn bè.",
+  },
+  {
+    name: "Phan Văn Nam",
+    role: "Chuyên gia makeup",
+    rating: 5,
+    text: "Chất phấn mịn, phù hợp da nhờn và da khô, team tư vấn sản phẩm chuyên nghiệp, hỗ trợ chăm sóc da trước và sau mỗi buổi thực hành.",
+  },
+  {
+    name: "Lý Thanh Oanh",
+    role: "Makeup Artist học lại",
+    rating: 4,
+    text: "Khóa workshop cuối tuần, thời gian ngắn nhưng đầy đủ kỹ thuật cơ bản, dễ áp dụng.",
+  },
+
+  // Slide 3: long, short, medium, long, short, medium
+  {
+    name: "Nguyễn Anh Quân",
+    role: "Stylist",
+    rating: 5,
+    text: "Buổi chụp lookbook thời trang, make-up phong cách editorial, đội ngũ lắng nghe yêu cầu và phối hợp ăn ý, tạo nên shoot ảnh ấn tượng, màu sắc hài hòa dưới ánh đèn và hậu kỳ gần như không cần can thiệp.",
+  },
+  {
+    name: "Vũ Hoàng Phúc",
+    role: "Học viên cá nhân",
+    rating: 5,
+    text: "Lớp học 1:1, giáo viên chỉnh sửa từng nét cọ, giúp tôi tiến bộ nhanh chóng.",
+  },
+  {
+    name: "Ngô Công Lực",
+    role: "Makeup đi sự kiện",
+    rating: 4,
+    text: "Ekip makeup cho sự kiện ngoài trời nhưng lớp nền không bị trôi dù trời nắng gắt, kỹ thuật chống lem phấn cực xịn.",
+  },
+  {
+    name: "Hoàng Thị Sen",
+    role: "Cô dâu",
+    rating: 5,
+    text: "Ngày trọng đại của tôi thật hoàn hảo: lớp nền mỏng mịn, tone makeup hài hòa với váy cưới, ánh sáng hội trường làm da tôi phát sáng tự nhiên, cảm giác được tỏa sáng đúng nghĩa.",
+  },
+  {
+    name: "Trương Văn Tùng",
+    role: "Khách tiệc cưới",
+    rating: 4,
+    text: "Makeup tone trầm ấm cho buổi tiệc truyền thống, giữ nét thanh lịch và sang trọng suốt 5 giờ.",
+  },
+  {
+    name: "Đỗ Mỹ Linh",
+    role: "Học viên Pro",
+    rating: 5,
+    text: "Sau khóa học nâng cao kết hợp kỹ thuật airbrush và contour tối ưu, tôi đã tự tin nhận các hợp đồng trang điểm cô dâu và sự kiện với giá trị cao hơn mong đợi.",
   },
 ];
 
-/* --------- “Con số biết nói” --------- */
 const kpis = [
   { icon: HeartIcon, value: "10+", label: "Năm kinh nghiệm" },
   { icon: AcademicCapIcon, value: "28+", label: "Khóa đào tạo" },
@@ -132,22 +136,21 @@ const kpis = [
   { icon: SignalIcon, value: "8+", label: "Kênh truyền thông" },
 ];
 
-/* render sao vàng / xám */
-const Stars = ({ rating }) => (
-  <div className="flex gap-[2px] mb-3">
-    {[1, 2, 3, 4, 5].map((n) => (
-      <StarIcon
-        key={n}
-        className={`w-4 h-4 ${
-          n <= rating ? "text-yellow-400" : "text-gray-600"
-        }`}
-      />
-    ))}
-  </div>
-);
-// … import StarIcon, Swiper, v.v. giữ nguyên …
+function Stars({ rating }) {
+  return (
+    <div className="flex gap-1 mb-2">
+      {[1, 2, 3, 4, 5].map((n) => (
+        <StarIcon
+          key={n}
+          className={`w-5 h-5 ${
+            n <= rating ? "text-yellow-400" : "text-gray-600"
+          }`}
+        />
+      ))}
+    </div>
+  );
+}
 
-/* ---------- helper random row-span dựa vào độ dài text ---------- */
 const spanClass = (txt) => {
   const len = txt.length;
   if (len > 160) return "row-span-3";
@@ -156,29 +159,17 @@ const spanClass = (txt) => {
 };
 
 export default function Testimonials() {
-  // chia 2 slide, giống trước
-  const size = 9;
+  const size = 6;
   const slides = [...Array(Math.ceil(reviews.length / size))].map((_, i) =>
     reviews.slice(i * size, (i + 1) * size)
   );
 
   return (
-    <section
-      className="
-        min-h-screen flex flex-col
-        py-12 md:py-20 px-4
-        bg-gradient-to-b
-        from-[#392067] via-[#8f2bd9] via-60% to-[#d00072] to-90%
-        text-white
-      "
-    >
-      {/* --- Title --- */}
-      <h2 className="text-center font-heading text-3xl md:text-4xl font-bold mb-10">
+    <section className="min-h-screen flex flex-col py-8 sm:py-12 md:py-20 px-2 sm:px-4 md:px-8 bg-gradient-to-tr from-[#392067] via-[#8f2bd9] via-50% via-[#ff8000] to-[#d00072] text-white">
+      <h2 className="text-center font-heading text-3xl sm:text-4xl md:text-5xl font-bold mb-12">
         Feedback từ khách hàng & học viên
       </h2>
-
-      {/* --- Swiper Masonry (flex-grow) --- */}
-      <div className="flex-grow">
+      <div className="flex-grow overflow-hidden">
         <Swiper
           modules={[Autoplay]}
           slidesPerView={1}
@@ -187,16 +178,7 @@ export default function Testimonials() {
         >
           {slides.map((chunk, idx) => (
             <SwiperSlide key={idx}>
-              {/* CSS-Grid Masonry dense */}
-              <div
-                className="
-                  grid
-                  grid-auto-rows-[10px]     /* chiều cao hàng 10px -> row-span=1≈10px */
-                  grid-auto-flow-dense
-                  grid-cols-1 sm:grid-cols-2 lg:grid-cols-3
-                  gap-6 max-w-7xl mx-auto
-                "
-              >
+              <div className="grid grid-auto-rows-[10px] grid-auto-flow-dense grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 max-w-7xl mx-auto">
                 {chunk.map((r, i) => (
                   <motion.div
                     key={i}
@@ -204,26 +186,19 @@ export default function Testimonials() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: i * 0.04 }}
-                    className={`
-                      ${spanClass(r.text)}
-                      bg-black/70 backdrop-blur-md relative overflow-hidden
-                      rounded-xl p-6
-                      border border-white/10
-                      shadow-[0_4px_20px_rgba(255,255,255,0.05)]
-                      hover:shadow-[0_8px_32px_rgba(255,255,255,0.08)]
-                      hover:scale-105 hover:rotate-[1deg] transition
-                    `}
+                    className={`${spanClass(
+                      r.text
+                    )} bg-black/70 backdrop-blur-md relative overflow-hidden rounded-xl p-4 sm:p-6 border border-white/10 shadow-lg hover:shadow-xl hover:scale-105 hover:rotate-[1deg] transition`}
                   >
-                    {/* overlay champagne nhạt */}
                     <span className="absolute inset-0 bg-[rgba(220,201,154,0.07)] rounded-xl pointer-events-none" />
                     <Stars rating={r.rating} />
-                    <p className="relative z-10 italic text-sm md:text-base mb-4 leading-relaxed">
+                    <p className="relative z-10 italic text-xs sm:text-sm md:text-base mb-3 leading-relaxed">
                       “{r.text}”
                     </p>
                     <p className="relative z-10 font-semibold text-sm">
                       {r.name}
                     </p>
-                    <p className="relative z-10 text-xs text-gray-300">
+                    <p className="relative z-10 text-xs sm:text-xs text-gray-300">
                       {r.role}
                     </p>
                   </motion.div>
@@ -233,20 +208,22 @@ export default function Testimonials() {
           ))}
         </Swiper>
       </div>
-
-      {/* --- KPI block luôn trong khung nhìn --- */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="mt-12 md:mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto"
+        className="mt-8 md:mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 max-w-5xl mx-auto"
       >
         {kpis.map(({ icon: Icon, value, label }, i) => (
           <div key={i} className="text-center">
-            <Icon className="w-14 h-14 mx-auto text-[var(--color-accent)] mb-3" />
-            <p className="text-4xl font-bold text-champagne">{value}</p>
-            <p className="text-sm md:text-base text-gray-200 mt-1">{label}</p>
+            <Icon className="w-12 h-12 sm:w-14 sm:h-14 mx-auto text-[var(--color-accent)] mb-2" />
+            <p className="text-3xl sm:text-4xl md:text-5xl font-bold text-champagne">
+              {value}
+            </p>
+            <p className="text-sm sm:text-base md:text-lg text-gray-200 mt-1">
+              {label}
+            </p>
           </div>
         ))}
       </motion.div>

@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import {
   StarIcon,
   HeartIcon,
@@ -159,9 +160,21 @@ const spanClass = (txt) => {
 };
 
 export default function Testimonials() {
-  const size = 3;
-  const slides = [...Array(Math.ceil(reviews.length / size))].map((_, i) =>
-    reviews.slice(i * size, (i + 1) * size)
+  // Dynamic slide size: 3 on mobile, 6 on larger screens
+  const [size, setSize] = useState(6);
+  useEffect(() => {
+    const updateSize = () => {
+      setSize(window.innerWidth < 640 ? 3 : 6);
+    };
+    updateSize();
+    window.addEventListener("resize", updateSize);
+    return () => window.removeEventListener("resize", updateSize);
+  }, []);
+
+  // Split reviews into slides of `size`
+  const slides = Array.from(
+    { length: Math.ceil(reviews.length / size) },
+    (_, i) => reviews.slice(i * size, i * size + size)
   );
 
   return (
@@ -215,7 +228,7 @@ export default function Testimonials() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="mt-12 md:mt-16 grid grid-cols-4 gap-4 sm:gap-6 max-w-6xl mx-auto"
+        className="mt-12 md:mt-16 grid grid-cols-4 gap-6 max-w-6xl mx-auto"
       >
         {kpis.map(({ icon: Icon, value, label }, i) => (
           <div key={i} className="flex flex-col items-center">

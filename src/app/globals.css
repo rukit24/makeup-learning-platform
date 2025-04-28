@@ -36,4 +36,17 @@
 
   /* Màu vàng Champagne */
   .text-champagne { color: #dcc99a; }
+  /* Keyframes cho hiệu ứng shake+zoom */
+  @keyframes shakeZoom {
+    0%, 100%   { transform: scale(1)   rotate(0deg); }
+    25%        { transform: scale(1.1) rotate(-5deg); }
+    50%        { transform: scale(1)   rotate(5deg); }
+    75%        { transform: scale(1.1) rotate(-5deg); }
+  }
+
+  /* Lớp tiện ích cho animation liên tục */
+  .animate-shake-zoom {
+    animation: shakeZoom 2.5s infinite ease-in-out;
+  }
+  
 }

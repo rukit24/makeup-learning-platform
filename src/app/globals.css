@@ -48,5 +48,18 @@
   .animate-shake-zoom {
     animation: shakeZoom 2.5s infinite ease-in-out;
   }
-  
+  /* Globals CSS bổ sung cho hiệu ứng rung phát sáng */
+/* Thêm vào globals.css nếu chưa có */
+
+@keyframes shakeGlow {
+  0%, 100% { transform: rotate(0deg) scale(1); box-shadow: 0 0 5px #ffd700; }
+  25% { transform: rotate(3deg) scale(1.05); box-shadow: 0 0 10px #ffd700; }
+  50% { transform: rotate(-3deg) scale(1.05); box-shadow: 0 0 15px #ffd700; }
+  75% { transform: rotate(3deg) scale(1.05); box-shadow: 0 0 10px #ffd700; }
+}
+
+.animate-shake-glow {
+  animation: shakeGlow 2.5s infinite ease-in-out;
+}
+
 }

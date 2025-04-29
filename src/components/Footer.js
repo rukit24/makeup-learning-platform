@@ -131,7 +131,7 @@ export default function Footer() {
               <FaYoutube />
             </a>
             <a
-              href="https://tiktok.com/@tinalemakeup"
+              href="https://www.tiktok.com/@phuongquynhmakeup?_t=ZT-8vuOmhFzWKh&_r=1"
               target="_blank"
               rel="noopener noreferrer"
               className="text-4xl md:text-5xl text-[var(--color-accent)] animate-shake-zoom"

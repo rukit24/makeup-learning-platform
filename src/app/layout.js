@@ -1,6 +1,8 @@
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import MessengerChat from "@/components/MessengerChat";
+import CallButton from "@/components/CallButton";
 
 import { Playfair_Display, Montserrat } from "next/font/google";
 
@@ -57,6 +59,8 @@ export default function RootLayout({ children }) {
         <Header />
         <main className="flex-grow">{children}</main>
         <Footer />
+        <MessengerChat />
+        <CallButton />
       </body>
     </html>
   );

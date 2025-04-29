@@ -232,11 +232,44 @@ export default function Testimonials() {
       >
         {kpis.map(({ icon: Icon, value, label }, i) => (
           <div key={i} className="flex flex-col items-center">
-            <Icon className="w-7 h-7 sm:w-10 sm:h-10 md:w-12 md:h-12 text-[var(--color-accent)] mb-2" />
-            <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-champagne">
+            <Icon
+              className="
+    w-6 h-6             /* mobile nhỏ */
+    sm:w-8 sm:h-8       /* mobile lớn */
+    md:w-12 md:h-12     /* tablet */
+    lg:w-16 lg:h-16     /* desktop nhỏ */
+    xl:w-20 xl:h-20     /* desktop lớn */
+    2xl:w-24 2xl:h-24   /* siêu lớn */
+    text-[var(--color-accent)]
+    mb-2
+  "
+            />
+            <p
+              className="
+    text-base
+    sm:text-lg
+    md:text-xl
+    lg:text-2xl
+    xl:text-4xl
+    2xl:text-6xl
+    font-bold
+    text-champagne
+  "
+            >
               {value}
             </p>
-            <p className="text-xs sm:text-sm md:text-base text-gray-200 text-center mt-1">
+            <p
+              className="
+    text-xs
+    sm:text-sm
+    md:text-base
+    lg:text-lg
+    xl:text-2xl
+    text-gray-200
+    text-center
+    mt-1
+  "
+            >
               {label}
             </p>
           </div>

@@ -1,8 +1,8 @@
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import MessengerChat from "@/components/MessengerChat";
 import CallButton from "@/components/CallButton";
+import ChatWidget from "@/components/ChatWidget";
 
 import { Playfair_Display, Montserrat } from "next/font/google";
 
@@ -29,7 +29,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="vi" className={`${playfair.variable} ${montserrat.variable}`}>
       <head>
-        {/* favicon & font Be Vietnam Pro (body) */}
+        {/* favicon & Google Fonts */}
         <link
           rel="apple-touch-icon"
           sizes="180x180"
@@ -54,13 +54,13 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         />
       </head>
-
       <body className="bg-custom text-custom min-h-screen flex flex-col">
         <Header />
         <main className="flex-grow">{children}</main>
         <Footer />
-        <MessengerChat />
+        {/* Floating chat & call buttons */}
         <CallButton />
+        <ChatWidget />
       </body>
     </html>
   );
